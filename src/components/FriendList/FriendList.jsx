@@ -1,7 +1,7 @@
 import s from './FriendList.module.css';
 import { PropTypes } from 'prop-types';
 
-function FriendsList({ friends }) {
+export default function FriendsList({ friends }) {
   const listItem = friends.map(({ id, avatar, name, isOnline }) => (
     <li className={s.item} key={id}>
       <span
@@ -17,7 +17,5 @@ function FriendsList({ friends }) {
 }
 
 FriendsList.propTypes = {
-  friends: PropTypes.array.isRequired,
+  friends: PropTypes.arrayOf(PropTypes.shape),
 };
-
-export default FriendsList;

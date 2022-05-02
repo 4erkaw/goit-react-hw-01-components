@@ -1,7 +1,7 @@
 import s from './Statistics.module.css';
 import { PropTypes } from 'prop-types';
 
-function Statistics({ title, stats }) {
+export default function Statistics({ title, stats }) {
   const listItem = stats.map(({ id, label, percentage }) => (
     <li className={s.item} key={id} style={{ backgroundColor: randColor() }}>
       <span className={s.label}>{label}</span>
@@ -28,5 +28,3 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.array.isRequired,
 };
-
-export default Statistics;
